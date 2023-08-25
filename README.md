@@ -64,3 +64,35 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+<h1>Required cmd in this project</h1>
+composer create-project --prefer-dist laravel/laravel laravel-excel
+
+Step 2: Configure Database Details
+After, Installation Go to the project root directory, open .env file, and set database detail as follow:
+
+DB_CONNECTION=mysql 
+DB_HOST=127.0.0.1 
+DB_PORT=3306 
+DB_DATABASE=<DATABASE NAME>
+DB_USERNAME=<DATABASE USERNAME>
+DB_PASSWORD=<DATABASE PASSWORD>
+
+Step 3: Install maatwebsite/excel package
+You can install Laravel Excel via composer. You've to run this command for the installation.
+
+composer require maatwebsite/excel
+
+Register Plugin’s Service in Providers & Aliases
+You can have the following code placed inside the config/app.php file.
+'providers' => [
+  Maatwebsite\Excel\ExcelServiceProvider::class,
+ ],  
+
+'aliases' => [ 
+  'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+],
+
+Execute the vendor, publish the command, and publish the config.
+
+php artisan vendor:publish --provider="Maatwebsite\Excel\ExcelServiceProvider" --tag=config
