@@ -22,4 +22,12 @@ class UserController extends Controller
     public function exportUsers(Request $request){
         return Excel::download(new ExportUser, 'users.xlsx');
     }
+
+    public function displayUsers()
+{
+    $users = User::all(); // Fetch all user records from the database
+
+    return view('display_users', compact('users')); // Pass the data to the view
+    
+}
 }

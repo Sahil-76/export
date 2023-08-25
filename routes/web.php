@@ -23,3 +23,5 @@ Route::post('/import',[UserController::class,'import'])->name('import');
 Route::get('/export-users',[UserController::class,'exportUsers'])->name('export-users');
 
 
+Route::get('/display-users', [UserController::class, 'displayUsers'])->name('display-users');
+Route::get('/display-users', [UserController::class, 'displayUsers'])->name('display_users');

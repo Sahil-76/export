@@ -20,8 +20,10 @@
                     <label class="custom-file-label" for="customFile">Choose file</label>
                 </div>
             </div>
-            <button class="btn btn-primary">Submit</button>
+            <button class="btn btn-primary">import</button>
+            <a class="btn btn-success" href="{{ route('display_users') }}">display Users</a>
             <a class="btn btn-success" href="{{ route('export-users') }}">Export Users</a>
+            
         </form>
     </div>
 </body>
